@@ -10,7 +10,7 @@ before_script:
     - bundle install
 script:
     - bundle exec jekyll build
-    - bundle exec htmlproofer ./_site --disable-external
+    #- bundle exec htmlproofer ./_site --disable-external
 branches:
     only:
         - release
