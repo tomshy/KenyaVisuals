@@ -1,0 +1,45 @@
+# Configurations
+markdown: kramdown
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+highlighter: pygments
+
+# Needed for backward compatibility
+gems: [jekyll-paginate]
+
+# Permalinks
+permalink:        /blog/:year/:month/:day/:title
+
+# Setup
+title:            'Kenya Visuals'
+tagline:          'Kenyan Story in Visuals'
+description:      'Telling Kenyan Story in Visuals'
+url:              'http://192.168.1.11:4000'
+#baseurl:          ''
+
+# Navigation
+
+
+# Author Details
+author:         'Tom Nyongesa'
+
+#Social Media links (Use complete URL except for email)
+
+# Google Analytics
+gahandler: 'UA-52149651-1'
+
+#if footersvg is 'true' the social media links will be shown top on the copy right in the footer
+footersvg: 'true'
+
+# Disqus
+disqushandler: 'testingblogo'
+
+# txtpen
+txtpenhandler: 'testingblogo'
+
+# Blog Configurations
+paginate: 10 # Posts per page on the blog index
+paginate_path: '/blog/page:num'
+destination: ./_site
+
+# Custom vars
+version:          0.9x beta 2
