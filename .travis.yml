@@ -8,3 +8,9 @@ script: - bundle exec jekyll build
         - bundle exec htmlproofer ./_site
 branches: only: - master
 after_success: - echo "Build successful"
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: 8e8ab0c598333b3013ed02221b1ec5eb618f488f
+    on:
+        branch: master
