@@ -16,6 +16,7 @@
   </title>
   
   <!-- CSS -->
+<<<<<<< HEAD
   <link rel="stylesheet" href="/KenyaVisuals/assets/css/bootstrap.css">
   <link rel="stylesheet" href="/KenyaVisuals/assets/css/app.css">
   <link rel="stylesheet" href="/KenyaVisuals/assets/css/colors.css">
@@ -29,6 +30,21 @@
   <script src="/KenyaVisuals/assets/js/jekyll-search.js"></script>
   <script src="/KenyaVisuals/assets/js/jquery.magnific-popup.min.js"></script>
   <script src="/KenyaVisuals/assets/js/app.js"></script>
+=======
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/app.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/colors.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/github.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/icomoon.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/controls.css">
+
+  <script src="{{site.baseurl}}/assets/js/jquery.min.js"></script>
+  <script src="{{site.baseurl}}/assets/js/bootstrap.min.js"></script>
+  <script src="{{site.baseurl}}/assets/js/jekyll-search.js"></script>
+  <script src="{{site.baseurl}}/assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="{{site.baseurl}}/assets/js/app.js"></script>
+>>>>>>> 29e9c53dd2f8ec350265a149b51ca82d1b408b0e
   
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="128x128" href="http://localhost:4000/assets/images/favicon-128.png">
@@ -76,6 +92,7 @@
                     <ul class="nav navbar-nav">
                         
                           <li>
+<<<<<<< HEAD
                             <a href="/KenyaVisuals/trade">Trade</a>
                           </li>
                         
@@ -97,6 +114,29 @@
                         
                           <li>
                             <a href="/KenyaVisuals/tourism">Tourism</a>
+=======
+                            <a href="{{site.baseurl}}/trade">Trade</a>
+                          </li>
+                        
+                          <li>
+                            <a href="{{site.baseurl}}/agriculture">Agriculture</a>
+                          </li>
+                        
+                          <li>
+                            <a href="{{site.baseurl}}/education">Education</a>
+                          </li>
+                        
+                          <li>
+                            <a href="{{site.baseurl}}/gender">Gender</a>
+                          </li>
+                        
+                          <li>
+                            <a href="{{site.baseurl}}/ict">ICT</a>
+                          </li>
+                        
+                          <li>
+                            <a href="{{site.baseurl}}/tourism">Tourism</a>
+>>>>>>> 29e9c53dd2f8ec350265a149b51ca82d1b408b0e
                           </li>
                         
                         
@@ -123,6 +163,7 @@
         <ul class="left-nav">
           
                           <li class="left-nav-item">
+<<<<<<< HEAD
                             <a href="/KenyaVisuals/trade">Trade</a>
                           </li>
                         
@@ -144,6 +185,29 @@
                         
                           <li class="left-nav-item">
                             <a href="/KenyaVisuals/tourism">Tourism</a>
+=======
+                            <a href="{{site.baseurl}}/trade">Trade</a>
+                          </li>
+                        
+                          <li class="left-nav-item">
+                            <a href="{{site.baseurl}}/agriculture">Agriculture</a>
+                          </li>
+                        
+                          <li class="left-nav-item">
+                            <a href="{{site.baseurl}}/education">Education</a>
+                          </li>
+                        
+                          <li class="left-nav-item">
+                            <a href="{{site.baseurl}}/gender">Gender</a>
+                          </li>
+                        
+                          <li class="left-nav-item">
+                            <a href="{{site.baseurl}}/ict">ICT</a>
+                          </li>
+                        
+                          <li class="left-nav-item">
+                            <a href="{{site.baseurl}}/tourism">Tourism</a>
+>>>>>>> 29e9c53dd2f8ec350265a149b51ca82d1b408b0e
                           </li>
                         
         </ul>
@@ -154,6 +218,7 @@
     </div>
     <div class="col-md-8 col-sm-7 col-md-offset-3 col-sm-offset-4">
           
+<<<<<<< HEAD
           <!--<svg style="background-color: #999;margin-top: 30px;">
             
 
@@ -221,6 +286,39 @@ svg.selectAll(".dot")
         this.attr('class', 'focus')
     })
       .on("mouseout", function() {  })
+=======
+          <svg style="background-color: #999;margin-top: 30px;">
+            
+
+          </svg>
+          <script src="{{site.baseurl}}/assets/js/d3.min.js"></script>
+          <script type="text/javascript">
+            d3.csv('{{site.baseurl}}/assets/kenyan_data/corruption.csv').then(function (data) {              
+              console.log(data);
+                var svg=d3.select("svg")
+                        .attr("width",800)
+                        .attr("height",550);                
+                var x=d3.scaleTime().rangeRound([0,500]);
+                var y=d3.scaleLinear().rangeRound([350,0]);
+                var x_axis=d3.axisBottom(x);
+                var y_axis=d3.axisLeft(y);
+                var chartGroup=svg.append("g").attr("transform","translate(50,50)");
+                var line = d3.line()
+                           .x(function(d) { return x(d.Year)})
+                           .y(function(d) { return y(d.Estimated_Cash_lost)})
+                           x.domain(d3.extent(data, function(d) { return d.Year }));
+                           y.domain(d3.extent(data, function(d) { return d.Estimated_Cash_lost }));
+                //chartGroup.append("path").attr("d",line(data));
+                chartGroup.append("g")
+                           .call(d3.axisLeft(y))
+                           .append("text")
+                           .attr("fill", "#000")
+                           .attr("transform", "rotate(-90)")
+                           .attr("y", 6)
+                           .attr("dy", "0.71em")
+                           .attr("text-anchor", "end")
+                           .text("Amount");
+>>>>>>> 29e9c53dd2f8ec350265a149b51ca82d1b408b0e
             });
           </script>
     </div>
