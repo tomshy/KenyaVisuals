@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
-    <url>
-        <loc>http://localhost:4000/blog/2014/07/07/another-sharepoint-post</loc>
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/blog/2014/06/25/markdown-basics</loc>
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/blog/2014/06/25/another-sample-markdown</loc>
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/blog/2014/06/24/a-sample-pangram</loc>
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/blog/2013/10/11/clearing-sharepoint-designer-cache</loc>
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/blog/2013/04/20/dashboard-designer-cannot-connect-to-performancepoint</loc>
-    </url>
-    
     
     
     
