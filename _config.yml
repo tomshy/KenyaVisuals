@@ -14,7 +14,7 @@ title:            'Kenya Visuals'
 tagline:          'Kenyan Story in Visuals'
 description:      'Telling Kenyan Story in Visuals'
 url:              ''
-baseurl:          'KenyaVisuals'
+baseurl:          '/KenyaVisuals'
 
 # Navigation
 
