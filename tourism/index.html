@@ -16,30 +16,50 @@
   </title>
   
   <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/bootstrap.css">
-  <link rel="stylesheet" href="/assets/css/app.css">
-  <link rel="stylesheet" href="/assets/css/colors.css">
-  <link rel="stylesheet" href="/assets/css/github.css">
-  <link rel="stylesheet" href="/assets/css/icomoon.css">
-  <link rel="stylesheet" href="/assets/css/magnific-popup.css">
-  <link rel="stylesheet" href="/assets/css/controls.css">
+  <link rel="stylesheet" href="/KenyaVisuals/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="/KenyaVisuals/assets/css/app.css">
+  <link rel="stylesheet" href="/KenyaVisuals/assets/css/colors.css">
+  <link rel="stylesheet" href="/KenyaVisuals/assets/css/github.css">
+  <link rel="stylesheet" href="/KenyaVisuals/assets/css/icomoon.css">
+  <link rel="stylesheet" href="/KenyaVisuals/assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="/KenyaVisuals/assets/css/controls.css">
 
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/jekyll-search.js"></script>
-  <script src="/assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="/assets/js/app.js"></script>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="/KenyaVisuals/assets/js/jquery.min.js"></script>
+  <script src="/KenyaVisuals/assets/js/bootstrap.min.js"></script>
+  <script src="/KenyaVisuals/assets/js/jekyll-search.js"></script>
+  <script src="/KenyaVisuals/assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="/KenyaVisuals/assets/js/app.js"></script>
   
-
-  
-
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="128x128" href="http://localhost:4000/assets/images/favicon-128.png">
-  <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon-16.ico">
+  <link rel="shortcut icon" href="/assets/images/favicon-16.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+  <style type="text/css">
+      .line {
+    fill: none;
+    stroke: #ffab00;
+    stroke-width: 3;
+}
+  
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+/* Style the dots by assigning a fill and stroke */
+.dot {
+    fill: #ffab00;
+    stroke: #fff;
+}
+  
+  .focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+
+  </style>
 </head>
 
   <body>
@@ -56,27 +76,27 @@
                     <ul class="nav navbar-nav">
                         
                           <li>
-                            <a href="/trade">Trade</a>
+                            <a href="/KenyaVisuals/trade">Trade</a>
                           </li>
                         
                           <li>
-                            <a href="/agriculture">Agriculture</a>
+                            <a href="/KenyaVisuals/agriculture">Agriculture</a>
                           </li>
                         
                           <li>
-                            <a href="/education">Education</a>
+                            <a href="/KenyaVisuals/education">Education</a>
                           </li>
                         
                           <li>
-                            <a href="/gender">Gender</a>
+                            <a href="/KenyaVisuals/gender">Gender</a>
                           </li>
                         
                           <li>
-                            <a href="/ict">ICT</a>
+                            <a href="/KenyaVisuals/ict">ICT</a>
                           </li>
                         
                           <li>
-                            <a href="/tourism">Tourism</a>
+                            <a href="/KenyaVisuals/tourism">Tourism</a>
                           </li>
                         
                         
@@ -103,27 +123,27 @@
         <ul class="left-nav">
           
                           <li class="left-nav-item">
-                            <a href="/trade">Trade</a>
+                            <a href="/KenyaVisuals/trade">Trade</a>
                           </li>
                         
                           <li class="left-nav-item">
-                            <a href="/agriculture">Agriculture</a>
+                            <a href="/KenyaVisuals/agriculture">Agriculture</a>
                           </li>
                         
                           <li class="left-nav-item">
-                            <a href="/education">Education</a>
+                            <a href="/KenyaVisuals/education">Education</a>
                           </li>
                         
                           <li class="left-nav-item">
-                            <a href="/gender">Gender</a>
+                            <a href="/KenyaVisuals/gender">Gender</a>
                           </li>
                         
                           <li class="left-nav-item">
-                            <a href="/ict">ICT</a>
+                            <a href="/KenyaVisuals/ict">ICT</a>
                           </li>
                         
                           <li class="left-nav-item">
-                            <a href="/tourism">Tourism</a>
+                            <a href="/KenyaVisuals/tourism">Tourism</a>
                           </li>
                         
         </ul>
@@ -134,6 +154,75 @@
     </div>
     <div class="col-md-8 col-sm-7 col-md-offset-3 col-sm-offset-4">
           
+          <!--<svg style="background-color: #999;margin-top: 30px;">
+            
+
+          </svg>-->
+          <script src="/KenyaVisuals/assets/js/d3.min.js"></script>
+          <script type="text/javascript">
+            d3.csv('/KenyaVisuals/assets/kenyan_data/corruption.csv').then(function (data) {              
+              console.log(data);
+                var margin = {top: 50, right: 50, bottom: 50, left: 50}
+  , width = window.innerWidth - margin.left - margin.right // Use the window's width 
+  , height = window.innerHeight - margin.top - margin.bottom; // Use the window's height
+
+var n = 19;
+
+var xScale = d3.scaleLinear()
+    .domain([0, n-1]) // input
+    .range([0, width]); // output
+
+// 6. Y scale will use the randomly generate number 
+var yScale = d3.scaleLinear()
+    .domain([0, 1]) // input 
+    .range([height, 0]); // output 
+
+// 7. d3's line generator
+var line = d3.line()
+    .x(function(d, i) { return xScale(i); }) // set the x values for the line generator
+    .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
+    .curve(d3.curveMonotoneX) // apply smoothing to the line
+
+// 8. An array of objects of length N. Each object has key -> value pair, the key being "y" and the value is a random number
+var dataset = d3.range(n).map(function(d) { return {"y": d3.randomUniform(1)() } })
+
+// 1. Add the SVG to the page and employ #2
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// 3. Call the x axis in a group tag
+svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
+
+// 4. Call the y axis in a group tag
+svg.append("g")
+    .attr("class", "y axis")
+    .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
+
+
+svg.append("path")
+    .datum(dataset)
+    .attr("class", "line")
+    .attr("d", line); 
+svg.selectAll(".dot")
+    .data(dataset)
+  .enter().append("circle") // Uses the enter().append() method
+    .attr("class", "dot") // Assign a class for styling
+    .attr("cx", function(d, i) { return xScale(i) })
+    .attr("cy", function(d) { return yScale(d.y) })
+    .attr("r", 5)
+      .on("mouseover", function(a, b, c) { 
+        console.log(a) 
+        this.attr('class', 'focus')
+    })
+      .on("mouseout", function() {  })
+            });
+          </script>
     </div>
   </div> <!-- row -->
 </div> <!-- container -->
