@@ -13,8 +13,8 @@ permalink:        /blog/:year/:month/:day/:title
 title:            'Kenya Visuals'
 tagline:          'Kenyan Story in Visuals'
 description:      'Telling Kenyan Story in Visuals'
-url:              'http://192.168.1.11:4000'
-baseurl:          ''
+url:              ''
+baseurl:          'KenyaVisuals'
 
 # Navigation
 
