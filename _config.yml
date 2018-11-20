@@ -13,7 +13,7 @@ permalink:        /blog/:year/:month/:day/:title
 title:            'Kenya Visuals'
 tagline:          'Kenyan Story in Visuals'
 description:      'Telling Kenyan Story in Visuals'
-url:              ''
+url:              '/KenyaVisuals'
 baseurl:          '/KenyaVisuals'
 
 # Navigation
