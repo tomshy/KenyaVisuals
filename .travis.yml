@@ -6,6 +6,7 @@ rvm:
 install:
     - gem install jekyll bundler
     - gem install html-proofer
+    - npm install -g firebase-tools
 before_script:
     - bundle install
 script:
@@ -18,11 +19,6 @@ branches:
         - master
 after_success:
     - echo "Build was successful"
-deploy:
-    provider: pages
-    skip_cleanup: true
-    token: 
-        env: $GITHUB_TOKEN
-    on:
-        branch: release
+    firebase deploy --email ${FIREBASE_EMAIL} --password ${FIREBASE_PASSWORD}
+
 
