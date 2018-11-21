@@ -19,6 +19,6 @@ branches:
         - master
 after_success:
     - echo "Build was successful"
-    - firebase deploy --email ${FIREBASE_EMAIL} --password ${FIREBASE_PASSWORD}
+    - firebase deploy --token "$FIREBASE_TOKEN"
 
 
