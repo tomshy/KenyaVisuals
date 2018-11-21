@@ -19,6 +19,13 @@ branches:
         - master
 after_success:
     - echo "Build was successful"
-    - firebase deploy --token "$FIREBASE_TOKEN"
+    #- firebase deploy --token "$FIREBASE_TOKEN"
+deploy:
+    provider: firebase
+    skip_cleanup: true
+    token: 
+        env: $FIREBASE_TOKEN
+    on:
+        branch: release
 
 
